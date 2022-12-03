@@ -3,6 +3,5 @@ class SearchArticlesController < ApplicationController
     @searched = SearchArticle.all
   end
 
-  def create
-  end
+  def create; end
 end

@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   resources :search_articles
-  #post 'search_articles', to: "articles#search_articles"
-
+  # post 'search_articles', to: "articles#search_articles"
 end
