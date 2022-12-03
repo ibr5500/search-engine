@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<%= form_with(url: articles_path, method: :get, data: { turbo_frame_label: "articles"}) do |f|%>
+  <%= f.label :query, 'Search by article title' %>
+  <%= f.text_field :query %>
+
+  <%= f.submit 'search'%>
+<% end %>
+
+<div id="articles">
+  <%= render "articles", articles: @articles  %>
+</div>
+
+<div>
+  <p><%= @res %></p>
+</div>
+
+<%= link_to "New article", new_article_path() %>
