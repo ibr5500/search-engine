@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-No live demo.
+Please click [here](https://ibr55-search-engine.herokuapp.com/) for live demo.
 
 ## Getting Started
 
