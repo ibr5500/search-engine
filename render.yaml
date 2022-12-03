@@ -1,0 +1,10 @@
+database:
+  - name: postgres
+    ipAllowList: []
+
+services:
+  - type: web
+    name: rails
+    env: ruby
+    buildCommand: './bin/render_build.sh'
+
