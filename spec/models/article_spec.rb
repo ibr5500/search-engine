@@ -12,10 +12,9 @@ RSpec.describe Article, type: :model do
       expect(@article).to_not be_valid
     end
 
-    it 'test for body validation, if tile nill should not be valid' do
+    it 'test for body validation, if title nill should not be valid' do
       @article.body = nil
       expect(@article).to_not be_valid
     end
   end
-
 end
