@@ -1,0 +1,21 @@
+<section class='d-flex flex-column'>
+  <div class="container m-2">
+    <%= link_to "home page", articles_path, class: "btn btn-secondary mx-5" %>
+  </div>
+  <table class="table container my-5 border">
+    <thead>
+      <tr>
+        <th>Searched Item</th>
+        <th>Searched at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @searched.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.created_at.strftime("(%H:%M) %d-%b-%Y") %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

@@ -1,20 +1,23 @@
 <p style="color: green"><%= notice %></p>
+<section class= 'container form-container m-5'>
+  <h2 class="text-center text-black-50 mb-2">Articles list</h2>
 
-<h1>Articles</h1>
+  <div class='form mx-5'>
+    <%= form_with(url: articles_path, method: :get, data: { turbo_frame_label: "articles"}) do |f|%>
+      <div class="row mb-3">
+        <div class="d-inline-flex gap-2">
+          <%= f.text_field :query, placeholder: "Search by article's title", autofocus: true, autocomplete: "query", class: "form-control w-3" %>
+          <%= f.submit 'search', class:"btn btn-secondary"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<%= form_with(url: articles_path, method: :get, data: { turbo_frame_label: "articles"}) do |f|%>
-  <%= f.label :query, 'Search by article title' %>
-  <%= f.text_field :query %>
-
-  <%= f.submit 'search'%>
-<% end %>
-
-<div id="articles">
-  <%= render "articles", articles: @articles  %>
-</div>
-
-<div>
-  <p><%= @res %></p>
-</div>
-
-<%= link_to "New article", new_article_path() %>
+  <div id="articles" class="articles-container mx-4">
+    <%= render "articles", articles: @articles  %>
+  </div>
+  <div class="container d-flex justify-content-between">
+    <%= link_to "New article", new_article_path, class: "btn btn-outline-success mx-5" %>
+    <%= link_to "Search item list", search_articles_path, class: "btn btn-outline-success mx-5" %>
+  </div>
+</section>

@@ -5,10 +5,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @res = []
     if params[:query].present?
       @articles = Article.where("title LIKE ? ","#{params[:query]}%")
-      @res << { searched: Article.where("title LIKE ? ","#{params[:query]}%"), title: Article.title }
+      SearchArticle.create(title: @articles[0].title)
     else
       @articles = Article.all
     end

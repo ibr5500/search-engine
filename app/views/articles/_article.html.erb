@@ -1,6 +1,9 @@
 <div id="<%= dom_id article %>">
-  <p>
-    <%= link_to article.title, article_path(article) %>
-  </p>
+  <ul class="list-unstyled container">
+    <li class="d-flex justify-content-between border p-2 rounded">
+      <%= article.title %>
+      <%= link_to 'details', article_path(article), class:'btn btn-primary' %>
+    </li>
+  </ul>
 
 </div>

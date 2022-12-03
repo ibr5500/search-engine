@@ -1,3 +1,4 @@
+<div class= "form new-article-form text-center">
 <%= form_with(model: article) do |form| %>
   <% if article.errors.any? %>
     <div style="color: red">
@@ -11,17 +12,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class='mb-2 rounded'>
+    <%= form.text_field :title, placeholder: "Article's title", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+  <div class='mb-2 rounded'>   
+    <%= form.text_area :body, placeholder: "Article's body", class: "form-control" %>
   </div>
 
-  <div>
+  <div class='new-article-btn rounded'>
     <%= form.submit %>
   </div>
 <% end %>
+</div>

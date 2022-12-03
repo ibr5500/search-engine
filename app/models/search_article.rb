@@ -1,0 +1,2 @@
+class SearchArticle < ApplicationRecord
+end
